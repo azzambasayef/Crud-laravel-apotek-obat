@@ -1,59 +1,187 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+#  Sistem CRUD Data Obat Apotek (Laravel 12)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Project ini merupakan aplikasi web sederhana berbasis **Laravel 12** yang digunakan untuk mengelola data obat di apotek dengan konsep **CRUD (Create, Read, Update, Delete)**.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 📌 Deskripsi
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Aplikasi ini dibuat sebagai tugas mata kuliah **Pemrograman Web** dengan tujuan untuk memahami implementasi CRUD menggunakan framework Laravel.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Melalui aplikasi ini, pengguna dapat:
 
-## Learning Laravel
+* Menambahkan data obat
+* Melihat daftar obat
+* Mengedit data obat
+* Menghapus data obat
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## ⚙️ Teknologi yang Digunakan
 
-## Laravel Sponsors
+* PHP 8.2
+* Laravel 12
+* MySQL (XAMPP)
+* Bootstrap 5
+* Blade Template
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+---
 
-### Premium Partners
+## 🧩 Fitur Utama
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+* ✅ Create: Tambah data obat
+* ✅ Read: Menampilkan daftar obat
+* ✅ Update: Edit data obat
+* ✅ Delete: Hapus data obat
+* ✅ Validasi input form
+* ✅ Tampilan modern menggunakan Bootstrap
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## 🗂️ Struktur Database
 
-## Code of Conduct
+Tabel utama: **obats**
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+| Field              | Tipe Data | Keterangan     |
+| ------------------ | --------- | -------------- |
+| id                 | bigint    | Primary Key    |
+| nama_obat          | varchar   | Nama obat      |
+| kategori           | varchar   | Jenis obat     |
+| harga              | integer   | Harga obat     |
+| stok               | integer   | Jumlah stok    |
+| tanggal_kadaluarsa | date      | Expired date   |
+| created_at         | timestamp | Waktu dibuat   |
+| updated_at         | timestamp | Waktu diupdate |
 
-## Security Vulnerabilities
+---
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## 🚀 Cara Instalasi & Menjalankan Project
 
-## License
+### 1. Clone Repository
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+git clone https://github.com/azzambasayef/Crud-laravel-apotek-obat.git
+cd Crud-laravel-apotek-obat
+```
+
+---
+
+### 2. Install Dependency
+
+```bash
+composer install
+npm install
+```
+
+---
+
+### 3. Setup Environment
+
+Copy file `.env`:
+
+```bash
+cp .env.example .env
+```
+
+Lalu sesuaikan konfigurasi database:
+
+```env
+DB_DATABASE=apotek_crud
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+---
+
+### 4. Generate Key
+
+```bash
+php artisan key:generate
+```
+
+---
+
+### 5. Jalankan Migration
+
+```bash
+php artisan migrate
+```
+
+---
+
+### 6. Jalankan Server
+
+```bash
+php artisan serve
+```
+
+Buka di browser:
+
+```
+http://127.0.0.1:8000
+```
+
+---
+
+## 🧠 Konsep CRUD yang Diimplementasikan
+
+* **Create** → Menambahkan data obat melalui form input
+* **Read** → Menampilkan data obat dalam bentuk tabel
+* **Update** → Mengubah data obat yang sudah ada
+* **Delete** → Menghapus data obat dari database
+
+---
+
+## 📁 Struktur Folder Penting
+
+```
+app/
+ ├── Models/Obat.php
+ ├── Http/Controllers/ObatController.php
+
+database/
+ ├── migrations/
+
+resources/
+ ├── views/
+ │   ├── layout.blade.php
+ │   └── obat/
+ │       ├── index.blade.php
+ │       ├── create.blade.php
+ │       └── edit.blade.php
+
+routes/
+ └── web.php
+```
+
+---
+
+## 👨‍💻 Author
+
+**Nama:** Azzam Shamil Basayef
+**Asal:** Kota Binjai, Sumatera Utara
+**Program Studi:** Sistem Informasi
+
+---
+
+## 🎯 Tujuan Project
+
+Project ini dibuat untuk:
+
+* Memahami konsep CRUD dalam Laravel
+* Mengimplementasikan MVC (Model-View-Controller)
+* Melatih penggunaan database MySQL dengan Laravel
+
+---
+
+## 📌 Catatan
+
+* Project ini tidak menggunakan fitur login/authentication
+* Fokus utama adalah hanya implementasi CRUD dasar
+* Cocok untuk pembelajaran pemula
+
+---
+
+## ⭐ Penutup
+
+Project ini merupakan implementasi sederhana namun lengkap dari konsep CRUD menggunakan Laravel. 
