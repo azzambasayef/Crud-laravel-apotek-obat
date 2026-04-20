@@ -72,7 +72,7 @@
     <nav class="navbar navbar-dark navbar-custom mb-4">
         <div class="container py-2">
             <div>
-                <p class="brand-title text-white">💊 Sistem Data Obat Apotek</p>
+                <p class="brand-title text-white">Sistem Data Obat Apotek</p>
                 <p class="brand-subtitle text-white">Manajemen data obat</p>
             </div>
         </div>
