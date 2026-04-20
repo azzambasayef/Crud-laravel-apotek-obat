@@ -1,19 +1,21 @@
 #  Sistem CRUD Data Obat Apotek (Laravel 12)
 
-Project ini merupakan aplikasi web sederhana berbasis **Laravel 12** yang digunakan untuk mengelola data obat di apotek dengan konsep **CRUD (Create, Read, Update, Delete)**.
+Project ini merupakan aplikasi sederhana berbasis web yang dibuat menggunakan Laravel 12 untuk mengelola data obat di apotek.
+
+Project ini dibuat sebagai tugas mata kuliah Pemrograman Web 2 di semester 4 dari prodi Sistem Informasi Universitas Malikussaleh.
 
 ---
 
 ## 📌 Deskripsi
 
-Aplikasi ini dibuat sebagai tugas mata kuliah **Pemrograman Web** dengan tujuan untuk memahami implementasi CRUD menggunakan framework Laravel.
+Aplikasi ini digunakan untuk melakukan pengelolaan data obat seperti:
 
-Melalui aplikasi ini, pengguna dapat:
+* menambahkan data obat
+* melihat daftar obat
+* mengedit data obat
+* menghapus data obat
 
-* Menambahkan data obat
-* Melihat daftar obat
-* Mengedit data obat
-* Menghapus data obat
+Tujuan dari project ini adalah untuk memahami konsep CRUD (Create, Read, Update, Delete) menggunakan Laravel.
 
 ---
 
@@ -23,67 +25,57 @@ Melalui aplikasi ini, pengguna dapat:
 * Laravel 12
 * MySQL (XAMPP)
 * Bootstrap 5
-* Blade Template
 
 ---
 
-## 🧩 Fitur Utama
+## 🧩 Fitur
 
-* ✅ Create: Tambah data obat
-* ✅ Read: Menampilkan daftar obat
-* ✅ Update: Edit data obat
-* ✅ Delete: Hapus data obat
-* ✅ Validasi input form
-* ✅ Tampilan modern menggunakan Bootstrap
+* Tambah data obat
+* Tampilkan data obat
+* Edit data obat
+* Hapus data obat
+* Validasi form sederhana
 
 ---
 
 ## 🗂️ Struktur Database
 
-Tabel utama: **obats**
+Tabel utama yang digunakan adalah **obats**, dengan field:
 
-| Field              | Tipe Data | Keterangan     |
-| ------------------ | --------- | -------------- |
-| id                 | bigint    | Primary Key    |
-| nama_obat          | varchar   | Nama obat      |
-| kategori           | varchar   | Jenis obat     |
-| harga              | integer   | Harga obat     |
-| stok               | integer   | Jumlah stok    |
-| tanggal_kadaluarsa | date      | Expired date   |
-| created_at         | timestamp | Waktu dibuat   |
-| updated_at         | timestamp | Waktu diupdate |
+* id
+* nama_obat
+* kategori
+* harga
+* stok
+* tanggal_kadaluarsa
+* created_at
+* updated_at
 
 ---
 
-## 🚀 Cara Instalasi & Menjalankan Project
+## 🚀 Cara Menjalankan Project
 
-### 1. Clone Repository
+1. Clone repository
 
 ```bash
 git clone https://github.com/azzambasayef/Crud-laravel-apotek-obat.git
 cd Crud-laravel-apotek-obat
 ```
 
----
-
-### 2. Install Dependency
+2. Install dependency
 
 ```bash
 composer install
 npm install
 ```
 
----
-
-### 3. Setup Environment
-
-Copy file `.env`:
+3. Copy file environment
 
 ```bash
 cp .env.example .env
 ```
 
-Lalu sesuaikan konfigurasi database:
+4. Atur database di file `.env`
 
 ```env
 DB_DATABASE=apotek_crud
@@ -91,31 +83,25 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 
----
-
-### 4. Generate Key
+5. Generate key
 
 ```bash
 php artisan key:generate
 ```
 
----
-
-### 5. Jalankan Migration
+6. Jalankan migration
 
 ```bash
 php artisan migrate
 ```
 
----
-
-### 6. Jalankan Server
+7. Jalankan server
 
 ```bash
 php artisan serve
 ```
 
-Buka di browser:
+8. Buka di browser
 
 ```
 http://127.0.0.1:8000
@@ -123,65 +109,23 @@ http://127.0.0.1:8000
 
 ---
 
-## 🧠 Konsep CRUD yang Diimplementasikan
+## 🧠 Konsep CRUD
 
-* **Create** → Menambahkan data obat melalui form input
-* **Read** → Menampilkan data obat dalam bentuk tabel
-* **Update** → Mengubah data obat yang sudah ada
-* **Delete** → Menghapus data obat dari database
-
----
-
-## 📁 Struktur Folder Penting
-
-```
-app/
- ├── Models/Obat.php
- ├── Http/Controllers/ObatController.php
-
-database/
- ├── migrations/
-
-resources/
- ├── views/
- │   ├── layout.blade.php
- │   └── obat/
- │       ├── index.blade.php
- │       ├── create.blade.php
- │       └── edit.blade.php
-
-routes/
- └── web.php
-```
+* Create → menambahkan data obat
+* Read → menampilkan data obat
+* Update → mengubah data obat
+* Delete → menghapus data obat
 
 ---
 
 ## 👨‍💻 Author
 
-**Nama:** Azzam Shamil Basayef
-**Asal:** Kota Binjai, Sumatera Utara
-**Program Studi:** Sistem Informasi
-
----
-
-## 🎯 Tujuan Project
-
-Project ini dibuat untuk:
-
-* Memahami konsep CRUD dalam Laravel
-* Mengimplementasikan MVC (Model-View-Controller)
-* Melatih penggunaan database MySQL dengan Laravel
+Azzam Shamil Basayef
+Sistem Informasi
+Kota Binjai, Sumatera Utara
 
 ---
 
 ## 📌 Catatan
 
-* Project ini tidak menggunakan fitur login/authentication
-* Fokus utama adalah hanya implementasi CRUD dasar
-* Cocok untuk pembelajaran pemula
-
----
-
-## ⭐ Penutup
-
-Project ini merupakan implementasi sederhana namun lengkap dari konsep CRUD menggunakan Laravel. 
+Project ini masih sederhana dan tidak menggunakan fitur login. Fokus utama hanya pada implementasi CRUD dasar menggunakan Laravel.
