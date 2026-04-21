@@ -29,19 +29,14 @@ class ObatController extends Controller
         ]);
 
         Obat::create([
-            'nama_obat' => $request->nama_obat,
-            'kategori' => $request->kategori,
-            'harga' => $request->harga,
-            'stok' => $request->stok,
-            'tanggal_kadaluarsa' => $request->tanggal_kadaluarsa,
+            'nama_obat' => $request-> input ('nama_obat'),
+            'kategori' => $request-> input ('kategori'),
+            'harga' => $request-> input ('harga'),
+            'stok' => $request-> input ('stok'),
+            'tanggal_kadaluarsa' => $request-> input ('tanggal_kadaluarsa'),
         ]);
 
         return redirect()->route('obat.index')->with('success', 'Data obat berhasil ditambahkan.');
-    }
-
-    public function show(string $id)
-    {
-        //
     }
 
     public function edit(string $id)
@@ -63,11 +58,11 @@ class ObatController extends Controller
         $obat = Obat::findOrFail($id);
 
         $obat->update([
-            'nama_obat' => $request->nama_obat,
-            'kategori' => $request->kategori,
-            'harga' => $request->harga,
-            'stok' => $request->stok,
-            'tanggal_kadaluarsa' => $request->tanggal_kadaluarsa,
+            'nama_obat' => $request-> input ('nama_obat'),
+            'kategori' => $request-> input ('kategori'),
+            'harga' => $request-> input ('harga'),
+            'stok' => $request-> input ('stok'),
+            'tanggal_kadaluarsa' => $request-> input ('tanggal_kadaluarsa'),
         ]);
 
         return redirect()->route('obat.index')->with('success', 'Data obat berhasil diupdate.');
